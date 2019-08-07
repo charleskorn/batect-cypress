@@ -1,0 +1,14 @@
+{
+  "name": "batect-cypress",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "cypress": "^3.4.1"
+  }
+}
