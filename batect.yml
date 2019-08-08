@@ -30,6 +30,8 @@ tasks:
   app:
     run:
       container: app
+      ports:
+        - 8352:8352
 
   e2e:
     run:
