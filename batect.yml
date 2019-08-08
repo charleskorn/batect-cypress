@@ -8,8 +8,6 @@ containers:
         container: /app
         options: cached
     working_directory: /app
-    build_args:
-      PORT: 8352
     environment:
       PORT: 8352
 
