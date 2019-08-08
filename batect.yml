@@ -23,17 +23,20 @@ containers:
 
 tasks:
   setup:
+    description: Downloade dependencies need to run the application and tests.
     run:
       container: app
       command: npm install
 
   app:
+    description: Start the application (access it at http://localhost:8352)
     run:
       container: app
       ports:
         - 8352:8352
 
   e2e:
+    description: Run the Cypress tests.
     run:
       container: cypress
       command: cypress run --config baseUrl=http://app:8352
