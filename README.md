@@ -1,4 +1,4 @@
-# batect-cypress
+# batect-sample-cypress
 
 This was originally meant to be a repro of a bug in either batect or docker.
 
