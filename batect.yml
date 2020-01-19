@@ -21,7 +21,7 @@ containers:
 
 tasks:
   setup:
-    description: Downloade dependencies need to run the application and tests.
+    description: Download dependencies need to run the application and tests.
     run:
       container: app
       command: npm install
