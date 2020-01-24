@@ -1,0 +1,29 @@
+name: Pipeline
+
+on: [push]
+
+jobs:
+  build:
+    name: "Build and Test"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Cache batect
+        uses: actions/cache@v1
+        with:
+          path: ~/.batect/cache
+          key: batect-${{ hashFiles('batect') }}
+
+      - name: Cache NPM dependencies
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: batect-${{ hashFiles('package-lock.json') }}
+
+      - name: Download dependencies
+        run: ./batect setup
+
+      - name: Run tests
+        run: ./batect e2e
