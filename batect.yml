@@ -7,6 +7,9 @@ containers:
       - local: .
         container: /app
         options: cached
+      - type: cache
+        name: node_modules
+        container: /app/node_modules
     working_directory: /app
     environment:
       PORT: 8352
