@@ -1,3 +1,3 @@
-FROM node:13.7.0
+FROM node:13.10.1
 
 CMD npm start
