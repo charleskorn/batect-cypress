@@ -7,6 +7,9 @@ jobs:
     name: "Build and Test"
     runs-on: ubuntu-latest
 
+    env:
+      BATECT_CACHE_TYPE: directory
+
     steps:
       - uses: actions/checkout@v1
 
@@ -19,8 +22,8 @@ jobs:
       - name: Cache NPM dependencies
         uses: actions/cache@v1
         with:
-          path: node_modules
-          key: batect-${{ hashFiles('package-lock.json') }}
+          path: .batect/caches
+          key: batect-caches-${{ hashFiles('package-lock.json') }}
 
       - name: Download dependencies
         run: ./batect setup
