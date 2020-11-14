@@ -13,6 +13,9 @@ containers:
       - type: cache
         name: yarn_cache
         container: /home/container-user/.cache/yarn
+      - type: cache
+        name: cypress_cache
+        container: /home/container-user/.cache/Cypress
     working_directory: /code
     enable_init_process: true
     run_as_current_user:
