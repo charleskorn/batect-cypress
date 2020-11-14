@@ -1,18 +1,23 @@
-project_name: batect-cypress
+project_name: batect-sample-cypress
 
 containers:
   app:
-    build_directory: .
+    image: node:15.0.1
     volumes:
       - local: .
-        container: /app
+        container: /code
         options: cached
       - type: cache
         name: node_modules
-        container: /app/node_modules
-    working_directory: /app
+        container: /code/node_modules
+    working_directory: /code
+    enable_init_process: true
+    run_as_current_user:
+      enabled: true
+      home_directory: /home/container-user
     environment:
       PORT: 8352
+    command: npm start
 
   cypress:
     image: cypress/included:3.4.1
