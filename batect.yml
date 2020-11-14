@@ -10,6 +10,9 @@ containers:
       - type: cache
         name: node_modules
         container: /code/node_modules
+      - type: cache
+        name: yarn_cache
+        container: /home/container-user/.cache/yarn
     working_directory: /code
     enable_init_process: true
     run_as_current_user:
@@ -17,10 +20,10 @@ containers:
       home_directory: /home/container-user
     environment:
       PORT: 8352
-    command: npm start
+    command: yarn start
 
   cypress:
-    image: cypress/included:3.4.1
+    image: cypress/included:5.6.0
     volumes:
       - local: .
         container: /app
@@ -32,7 +35,7 @@ tasks:
     description: Download dependencies need to run the application and tests.
     run:
       container: app
-      command: npm install
+      command: yarn install
 
   app:
     description: Start the application (access it at http://localhost:8352)
