@@ -32,6 +32,7 @@ containers:
         container: /app
         options: cached
     working_directory: /app
+    shm_size: 1G # Chrome can need a lot of shared memory - if Chrome is crashing frequently, you may need to increase this value.
 
 tasks:
   setup:
