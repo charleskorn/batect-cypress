@@ -2,7 +2,7 @@ project_name: batect-sample-cypress
 
 containers:
   app:
-    image: node:15.13.0
+    image: node:15.14.0
     volumes:
       - local: .
         container: /code
