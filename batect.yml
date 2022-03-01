@@ -26,7 +26,7 @@ containers:
     command: yarn start
 
   cypress:
-    image: cypress/included:9.2.1
+    image: cypress/included:9.5.0
     volumes:
       - local: .
         container: /app
