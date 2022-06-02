@@ -1,7 +1,7 @@
 project_name: batect-sample-cypress
 
 containers:
-  app:
+  node: &node
     image: node:18.2.0
     volumes:
       - local: .
@@ -21,6 +21,9 @@ containers:
     run_as_current_user:
       enabled: true
       home_directory: /home/container-user
+
+  app:
+    <<: *node
     environment:
       PORT: 8352
     command: yarn start
@@ -44,7 +47,7 @@ tasks:
   setup:
     description: Download dependencies need to run the application and tests.
     run:
-      container: app
+      container: node
       command: yarn install
 
   app:
