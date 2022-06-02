@@ -24,6 +24,12 @@ containers:
     environment:
       PORT: 8352
     command: yarn start
+    health_check:
+      command: curl --fail --silent --show-error http://localhost:8352
+      interval: 1s
+      retries: 3
+      start_period: 10s
+      timeout: 1s
 
   cypress:
     image: cypress/included:9.5.4
