@@ -61,6 +61,6 @@ tasks:
     description: Run the Cypress tests.
     run:
       container: cypress
-      command: cypress run --config baseUrl=http://app:8352
+      command: cypress run
     dependencies:
       - app
