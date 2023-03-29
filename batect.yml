@@ -35,7 +35,7 @@ containers:
       timeout: 1s
 
   cypress:
-    image: cypress/included:12.8.1
+    image: cypress/included:12.9.0
     volumes:
       - local: .
         container: /app
