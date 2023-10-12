@@ -9,6 +9,6 @@
     "express": "4.18.2"
   },
   "devDependencies": {
-    "cypress": "13.3.0"
+    "cypress": "13.3.1"
   }
 }
